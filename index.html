@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <title>Advice Generator App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div id="adviceHeader" class="advice-header"></div>
+        <div id="adviceContent" class="advice-content"></div>
+        <div class="advice-divider hide-desktop-divider">
+          <img src="./images/pattern-divider-desktop.svg" />
+        </div>
+        <div class="advice-divider hide-mobile-divider">
+          <img src="./images/pattern-divider-mobile.svg" />
+        </div>
+        <div class="dice" onclick="getAdvice()">
+          <img src="./images/icon-dice.svg" />
+        </div>
+      </div>
+      <div class="footer">Developed by Eugene Kasimov</div>
+    </div>
+
+    <script>
+      window.onload = getAdvice();
+
+      function getAdvice() {
+        const adviceId = document.getElementById("adviceHeader");
+        const adviceContent = document.getElementById("adviceContent");
+
+        fetch("https://api.adviceslip.com/advice")
+          .then((response) => response.json())
+          .then((data) => {
+            adviceId.innerHTML = "advice #" + data.slip.id;
+            adviceContent.innerHTML = '"' + data.slip.advice + '"';
+          });
+      }
+    </script>
+  </body>
+</html>

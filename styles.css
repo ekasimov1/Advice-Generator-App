@@ -1,0 +1,83 @@
+body {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  background-color: hsl(217, 19%, 14%);
+  letter-spacing: 0.2em;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.card {
+  max-width: 450px;
+  position: relative;
+  padding: 35px;
+  background-color: hsl(217, 19%, 24%);
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.advice-header {
+  margin-top: 25px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: hsl(150, 100%, 66%);
+}
+
+.advice-content {
+  text-align: center;
+  margin-top: 25px;
+  color: hsl(193, 38%, 86%);
+  font-size: 28px;
+}
+
+.advice-divider {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.dice {
+  cursor: pointer;
+  position: absolute;
+  padding: 20px;
+  bottom: -32px;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  background-color: hsl(150, 100%, 66%);
+}
+.dice:hover {
+  box-shadow: 0px 0px 20px hsl(150, 100%, 66%);
+}
+
+@media screen and (max-width: 375px) {
+  .hide-desktop-divider {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 376px) {
+  .hide-mobile-divider {
+    display: none;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 25px;
+  color: hsl(193, 38%, 86%);
+  font-weight: 200;
+  font-size: 18px;
+  opacity: 0.7;
+}
